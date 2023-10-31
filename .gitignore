@@ -46,7 +46,7 @@ Thumbs.db
 
 
 /back/.idea
-/back/config
+/back/config/config.js
 /back/node_modules
 /database/data
 
