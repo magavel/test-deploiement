@@ -1,12 +1,30 @@
 version: '3'
 services:
   frontend:
+    restart: always
     build:
        context: ./front
     # image: front:latest
     ports:
-      - "80:80"
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro   ## ro pour read only
+  
+  # serveur cerbot pour generer les certificat et les  partager sur dossier  coomun en rw
+  # pour lancer la commende -- docker compose run --rm certbot certonly --webroot --webroot-path /var/www/certbot/ --dry-run -d http://vps-67dfc5cd.vps.ovh.net
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+      
+      
 
+
+# based e données
   mariadb:
     image: mariadb:latest
     #build:
