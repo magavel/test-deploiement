@@ -30,12 +30,6 @@ services:
     # image: back:latest
     ports:
       - "3000:3000"
-    environment:
-      DB_HOST: mariadb
-      DB_PORT: 3306
-      DB_DATABASE: charmettes
-      DB_USER: charmettes
-      DB_PASSWORD: charmettes
     links:
       - mariadb
     depends_on:
