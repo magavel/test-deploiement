@@ -1,5 +1,5 @@
 {
-    "/*":{
+    "posts/*":{
         "target":"http://vps-67dfc5cd.vps.ovh.net:3000",
         "secure": false,
         "loglevel": "debug"
