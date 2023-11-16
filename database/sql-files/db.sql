@@ -10,7 +10,7 @@ CREATE TABLE posts (
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO posts (title, content, imageUrl, createdAt) VALUES ('Mon SUPER -------- premier post', 'Ceci est le contenu de mon premier post.', 'imageUrl',NOW());
+INSERT INTO posts (title, content, imageUrl, createdAt) VALUES ('Mon correction dernier commit -------- premier post', 'Ceci est le contenu de mon premier post.', 'imageUrl',NOW());
 INSERT INTO posts (title, content, imageUrl, createdAt) VALUES ('Mon SUPER -------- premier post', 'Ceci est le contenu de mon premier post.', 'imageUrl',NOW());
 INSERT INTO posts (title, content, imageUrl, createdAt) VALUES ('Mon SUPER -------- premier post', 'Ceci est le contenu de mon premier post.', 'imageUrl',NOW());
 INSERT INTO posts (title, content, imageUrl, createdAt) VALUES ('Mon SUPER -------- premier post', 'Ceci est le contenu de mon premier post.', 'imageUrl',NOW());
