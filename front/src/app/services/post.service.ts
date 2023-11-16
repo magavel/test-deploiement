@@ -10,6 +10,6 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   public getAllPosts(): Observable<any> {
-    return this.http.get('http://vps-67dfc5cd.vps.ovh.net:3000/posts')
+    return this.http.get('/posts')
   }
 }
