@@ -6,12 +6,9 @@ RUN npm install -g npm@latest
 RUN npm install --force
 RUN npm run build --prod
 
-
-# Utilisez l'image NGINX officielle pour servir l'application Angular
-FROM nginx:latest
-# Copiez les fichiers de l'application Angular dans le répertoire de travail NGINX
+FROM nginx:1.21.6
+# ---- We set our proxy configuration in the following line ----
+COPY production.nginx.proxy.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /usr/local/app/dist/front /usr/share/nginx/html
-RUN echo "copie fichiers front"
 
-# Exposez le port 80
 EXPOSE 80
